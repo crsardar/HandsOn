@@ -1,6 +1,6 @@
 
 
-ElasticSearch 6.5
+ElasticSearch 6.5.1
 
 >>>
 Default Characteristic :
