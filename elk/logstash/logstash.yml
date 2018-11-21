@@ -1,0 +1,3 @@
+# Settings file in YAML
+
+path.config: pipeline.conf

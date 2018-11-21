@@ -1,0 +1,15 @@
+
+
+>>>
+Important Directory and File :
+	
+	$LOGSTASH_HOME/config		logstash.yml
+		
+		
+		
+	
+--config.test_and_exit option parses your configuration file and reports any errors
+	
+	bin/logstash -f first-pipeline.conf --config.test_and_exit
+	
+	
