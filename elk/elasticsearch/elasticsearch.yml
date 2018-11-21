@@ -1,0 +1,31 @@
+# Please consult the documentation for further information on configuration options:
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+#
+# ---------------------------------------------------------------------
+cluster.name: crsardar-elastic-sluster
+
+node.name: node-1
+node.master: true 
+node.data: true 
+
+path.data: /path/to/data
+
+path.logs: /path/to/logs
+
+bootstrap.memory_lock: true
+
+network.host: _local_
+#network.host: _en0_ ethernet 0
+#network.host: _site_ or _global_
+
+http.port: 9200
+
+transport.tcp.port: 9300
+
+discovery.zen.ping.unicast.hosts: ["10.11.11.11", "10.11.11.13", "192.168.1.10:9300", "es.cluster.com"]
+#The port will default to transport.profiles.default.port and fallback to transport.tcp.port if not specified.
+#A hostname that resolves to multiple IP addresses will try all resolved addresses.
+
+discovery.zen.minimum_master_nodes: n/2 + 1
+
+xpack.ml.enabled: false

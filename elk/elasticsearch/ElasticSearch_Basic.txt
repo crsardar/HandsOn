@@ -1,0 +1,74 @@
+
+
+ElasticSearch 6.5
+
+>>>
+Default Characteristic :
+	
+	Primary Shards/Index = 5
+	
+	Replica/Shard = 1
+	
+	[means - if cluster has min 2 nodes, a index will have 5 primary shards and another 5 replica shards
+	(1 complete replica) for a total of 10 shards per index]
+
+	Dynamically change the number of shards for an existing index using the '_shrink' and '_split' APIs.
+	
+	cluster.name = elasticsearch
+	
+	node.name = the first seven characters of the randomly generated UUID. 
+				Note that the node id is persisted and does not change when a node restarts 
+				and therefore the default node name will also not change.
+
+>>>
+Important Directory and File :
+	
+		$ES_HOME/config		(setting - ES_PATH_CONF)	elasticsearch.yml
+		
+		$ES_HOME/data 		(setting - path.data)
+		
+		$ES_HOME/logs		(setting - path.logs)
+		
+>>>
+Change Config Files Locations :
+	
+	'/etc/default/elasticsearch' in that change the valeu of 'ES_PATH_CONF'
+	
+	
+>>>
+Cluster Health :
+	
+	Health == green, yellow or red. 
+	On the shard level - 
+		Red = specific shard is not allocated in the cluster. 
+		Yellow = the primary shard is allocated but replicas are not. 
+		Green = all shards are allocated.
+		
+	The index level status is controlled by the worst shard status. 
+	The cluster status is controlled by the worst index status.
+	
+	http://localhost:9200/_cluster/health 	
+						
+	curl -X GET "localhost:9200/_cluster/health"
+				
+	curl -X GET "localhost:9200/_cluster/health/My_Index0,My_Index1"
+
+>>>
+ElasticSearch Data Structure :
+	
+	1. Inverted Index
+		Terms Dictionary = Alphabetical Shorted 
+		Doc Frequency 
+		Posting Lists == Document IDs
+		
+	Conjuction = Lip-Frog Approach
+	
+	Shorted Fields
+	Term Vectors
+	Doc Values
+
+	
+>>>
+Urls :		
+	1. All Indeices :
+		curl -X GET "localhost:9200/_cat/indices?v"
