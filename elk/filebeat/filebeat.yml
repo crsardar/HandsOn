@@ -1,0 +1,13 @@
+# You can find the full configuration reference here:
+# https://www.elastic.co/guide/en/beats/filebeat/index.html
+#========================================================
+
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/log/*.log
+    - c:\programdata\elasticsearch\logs\*
+
+output.logstash:
+  hosts: ["127.0.0.1:5044"]

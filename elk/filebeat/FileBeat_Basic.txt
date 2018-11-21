@@ -1,0 +1,17 @@
+
+
+FileBeat 6.5.1
+
+>>>
+Configfile /etc/filebeat/filebeat.yml
+
+
+>>>
+Index Templates : 
+	In Elasticsearch, index templates are used to define settings and mappings that determine how fields should be analyzed.
+	
+	Default : /etc/filebeat/fields.yml
+	
+	setup.template.name: "your_template_name"
+	setup.template.fields: "path/to/fields.yml"
+	
