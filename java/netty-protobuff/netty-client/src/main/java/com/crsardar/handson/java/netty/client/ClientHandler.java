@@ -2,11 +2,8 @@ package com.crsardar.handson.java.netty.client;
 
 import com.crsardar.handson.java.protobuff.client.ClientMsgContainer;
 import com.crsardar.handson.java.protobuff.server.ServerResponseContainer;
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
-import io.netty.util.CharsetUtil;
 
 import java.time.LocalDateTime;
 import java.util.Scanner;
