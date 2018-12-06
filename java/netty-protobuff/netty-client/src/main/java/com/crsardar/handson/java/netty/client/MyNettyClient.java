@@ -1,5 +1,6 @@
 package com.crsardar.handson.java.netty.client;
 
+import com.crsardar.handson.java.protobuff.server.ServerResponseContainer;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -8,9 +9,10 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.serialization.ClassResolvers;
-import io.netty.handler.codec.serialization.ObjectDecoder;
-import io.netty.handler.codec.serialization.ObjectEncoder;
+import io.netty.handler.codec.protobuf.ProtobufDecoder;
+import io.netty.handler.codec.protobuf.ProtobufEncoder;
+import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
+import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
 
 public class MyNettyClient {
 
@@ -38,7 +40,7 @@ public class MyNettyClient {
                 ChannelPipeline pipeline = socketChannel.pipeline();
 
                 // Proto-Buff Stubs
-                /*
+
                 // This code is working for ProtocallBuffer with Netty
                 pipeline.addLast(new ProtobufVarint32FrameDecoder());
                 pipeline.addLast(new ProtobufDecoder(ServerResponseContainer.ServerResponse.getDefaultInstance()));
@@ -47,13 +49,14 @@ public class MyNettyClient {
                 pipeline.addLast(new ProtobufEncoder());
 
                 pipeline.addLast(new ClientHandler());
-                */
+
 
                 // Testing Object Encoder-Decoder
+                /*
                 pipeline.addLast(new ObjectDecoder(ClassResolvers.cacheDisabled(null)));
                 pipeline.addLast(new ObjectEncoder());
                 pipeline.addLast(new ClientObjectHandler());
-
+                */
                 //System.out.println("Client : Pipeline : Thread = " + Thread.currentThread().getId());
             }
         });

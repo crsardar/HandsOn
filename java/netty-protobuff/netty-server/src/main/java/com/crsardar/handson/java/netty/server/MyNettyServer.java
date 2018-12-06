@@ -1,5 +1,6 @@
 package com.crsardar.handson.java.netty.server;
 
+import com.crsardar.handson.java.protobuff.client.ClientMsgContainer;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -12,10 +13,6 @@ import io.netty.handler.codec.protobuf.ProtobufDecoder;
 import io.netty.handler.codec.protobuf.ProtobufEncoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32FrameDecoder;
 import io.netty.handler.codec.protobuf.ProtobufVarint32LengthFieldPrepender;
-import io.netty.handler.codec.serialization.ClassResolvers;
-import io.netty.handler.codec.serialization.ObjectDecoder;
-import io.netty.handler.codec.serialization.ObjectEncoder;
-import protobuff.client.ClientMsgContainer;
 
 public class MyNettyServer {
 
@@ -57,10 +54,11 @@ public class MyNettyServer {
                 //---------------------------------------------------------------------------------//
 
                 // Testing Object Encoder-Decoder
+                /*
                 pipeline.addLast(new ObjectDecoder(ClassResolvers.cacheDisabled(null)));
                 pipeline.addLast(new ObjectEncoder());
                 pipeline.addLast(new ServerObjectHandler());
-
+                */
 
                 //System.out.println("Server : Pipeline : Thread = " + Thread.currentThread().getId());
             }
