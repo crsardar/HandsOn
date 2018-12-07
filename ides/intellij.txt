@@ -1,0 +1,18 @@
+
+Ctrl + Shift + F7 => (cursor on 'implements')View all methods of the implemented interfaces in a class
+
+Ctrl + B => To navigate to the declaration of a class, method or variable
+
+Ctrl + I => implement methods of the interfaces
+
+Ctrl + N => open any class in the editor quickly
+
+Ctrl + O => override methods of the base class  
+
+Ctrl + F12 => navigate in the currently edited file
+
+Alt + Ctrl + B => Implementation of Abs Methods.
+
+Alt + F1 => recent edited elements
+
+Alt + F7 => find all places where a particular class, method or variable is used in the whole project
