@@ -49,7 +49,7 @@ public class MyNettyClient {
 
     public static void main(String... arg) {
 
-        MyNettyClient myNettyClient = new MyNettyClient("localhost", 8080);
+        MyNettyClient myNettyClient = new MyNettyClient("192.168.144.127", 9292);
         myNettyClient.start();
 
     }

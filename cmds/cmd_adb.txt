@@ -1,0 +1,6 @@
+
+// To get process ID
+	adb shell pidof -s com.example.app
+	
+// Logs of a specific process
+	adb logcat --pid=process_ID
