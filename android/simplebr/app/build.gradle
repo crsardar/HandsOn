@@ -28,4 +28,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+//    androidTestCompile "org.mockito:mockito-android:2.7.21"
+    androidTestCompile "org.powermock:powermock-api-mockito:1.6.6"
+    androidTestCompile 'org.powermock:powermock-module-junit4:1.6.6'
+//    androidTestCompile 'org.robolectric:robolectric:4.1'
 }
