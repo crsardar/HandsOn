@@ -1,0 +1,3 @@
+
+// see execution tree of task 'clean'
+	gradle clean --dry-run

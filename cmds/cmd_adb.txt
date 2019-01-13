@@ -4,3 +4,6 @@
 	
 // Logs of a specific process
 	adb logcat --pid=process_ID
+	
+// List all installed packages 
+	adb shell pm list packages -f
