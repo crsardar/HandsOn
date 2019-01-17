@@ -1,3 +1,33 @@
 
 // see execution tree of task 'clean'
+
 	gradle clean --dry-run
+	
+// show all available tasks in current build DIR
+
+	gradle :tasks
+	gradle tasks // both are same
+	
+// run multiple tasks separating them by space (&b)
+// bellow will run clean & jacocoTestReport tasks 
+
+	gradle clean jacocoTestReport 
+	
+// run a specific task only on a specific sub-project/sub-module
+// will run clean only on MySubProject 
+// repeating the same task name only executes once
+
+	gradle MySubProject:clean 			
+
+// we can abbreviate task names from the command line by providing just enough
+// letters to uniquely determine it, examle gardle anDep ==> gradle androidDependencies
+
+// if buld file is named other than "build.gradle", say "myBuild.gradle"
+	
+	gradle -b myBuild.gradle build 
+	
+// print something from inside build.gradle file 
+	task pringMessage{
+	
+		println "Ohm Nama Shibai!"
+	}
