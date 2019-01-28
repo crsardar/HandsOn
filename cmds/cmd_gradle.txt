@@ -27,7 +27,28 @@
 	gradle -b myBuild.gradle build 
 	
 // print something from inside build.gradle file 
-	task pringMessage{
+	task pringMessage(){
 	
 		println "Ohm Nama Shibai!"
 	}
+	
+// gradle customized task
+	task printVariantNames(){
+		doLast{
+			android.applicationVarians.all{ variant
+				println variant.name
+			}
+		}
+	}
+	
+// exclude a taskfrom execution, lint task excluded
+	gradle build -x lint 
+	
+	
+	
+	
+	
+	
+	
+	
+	

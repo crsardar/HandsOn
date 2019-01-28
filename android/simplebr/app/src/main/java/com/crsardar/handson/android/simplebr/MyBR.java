@@ -12,6 +12,8 @@ public class MyBR extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+
+
         Log.d(TAG, "==========> onReceive Braodcast = " + intent.getAction()
                 + " : " + intent.getStringExtra("service_name"));
 
