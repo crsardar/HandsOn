@@ -7,3 +7,6 @@
 	
 // List all installed packages 
 	adb shell pm list packages -f
+	
+// IP of device
+	adb shell netcfg
