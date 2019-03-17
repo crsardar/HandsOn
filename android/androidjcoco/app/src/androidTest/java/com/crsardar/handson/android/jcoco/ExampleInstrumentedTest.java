@@ -5,6 +5,9 @@ import android.support.test.runner.AndroidJUnit4;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.xmlpull.v1.XmlPullParserException;
+import org.xmlpull.v1.XmlPullParserFactory;
+import org.xmlpull.v1.XmlSerializer;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -29,5 +32,14 @@ public class ExampleInstrumentedTest {
         onView(withId(R.id.button)).perform(click());
 
         onView(withId(R.id.text)).check(matches(withText("Hello World!")));
+
+        try
+        {
+            XmlSerializer xmlSerializer =  XmlPullParserFactory.newInstance().newSerializer();
+        }
+        catch (XmlPullParserException e)
+        {
+            e.printStackTrace();
+        }
     }
 }

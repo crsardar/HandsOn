@@ -12,3 +12,10 @@ const myFunctionOne = function(){
 }
 
 myFunctionOne();
+
+
+const myFunctinWithInput = function(input){
+
+    console.log('Given input = ' + input);
+}
+myFunctinWithInput(19)

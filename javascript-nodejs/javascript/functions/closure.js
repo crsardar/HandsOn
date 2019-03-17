@@ -1,3 +1,4 @@
+
 function closureFunction(x){
 
     return num => num*x; // it is returning s function (num) => {return num*x;}
