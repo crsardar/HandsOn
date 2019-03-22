@@ -74,7 +74,7 @@ public class MyNettyClient {
 
     public static void main(String... arg) {
 
-        MyNettyClient myNettyClient = new MyNettyClient("10.74.34.154", 9191);
+        MyNettyClient myNettyClient = new MyNettyClient("10.74.34.165", 9191);
 
         System.out.println("Client : main() : Thread = " + Thread.currentThread().getId());
 

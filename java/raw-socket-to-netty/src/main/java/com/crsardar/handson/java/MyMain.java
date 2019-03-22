@@ -20,7 +20,7 @@ public class MyMain
 
         try
         {
-            socket = new Socket("10.74.34.154", 9191);
+            socket = new Socket("10.74.34.165", 9191);
             System.out.println("Connected");
             input = new DataInputStream(socket.getInputStream());
             out = new DataOutputStream(socket.getOutputStream());
