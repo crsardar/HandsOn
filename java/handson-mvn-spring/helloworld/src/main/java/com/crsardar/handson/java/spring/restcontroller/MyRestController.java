@@ -1,4 +1,4 @@
-package com.crsardar.handson.java.springboot.application.restcontroller;
+package com.crsardar.handson.java.spring.restcontroller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -10,6 +10,6 @@ public class MyRestController {
     @RequestMapping(method = RequestMethod.GET, path = "/hello-world")
     public String helloWorld(){
 
-        return "Hello, Welcome to the world of SpringBoot!";
+        return "Hello, Welcome to the world of Spring!";
     }
 }
