@@ -1,4 +1,16 @@
 
+// Project Structure 
+
+	gradle projects
+
+// See all tasks
+
+	gradle tasks
+
+// Details of any tasks
+
+	gradle help --task <task-name>
+
 // see execution tree of task 'clean'
 
 	gradle clean --dry-run
@@ -22,7 +34,7 @@
 // we can abbreviate task names from the command line by providing just enough
 // letters to uniquely determine it, examle gardle anDep ==> gradle androidDependencies
 
-// if buld file is named other than "build.gradle", say "myBuild.gradle"
+// if build file is named other than "build.gradle", say "myBuild.gradle"
 	
 	gradle -b myBuild.gradle build 
 	
@@ -44,7 +56,22 @@
 // exclude a taskfrom execution, lint task excluded
 	gradle build -x lint 
 	
+
+
+**********
+	rootProject.name = "This is just a display value, it does NOT have any impact on build logic"
+
+
+Ordering of task execution - 
+	[task-name].mustRunafter [predecessor-task-1], [predecessor-task-2]
+
+
+Precedence of properties  - 
+	command-line-arguments > execution-system-variables > gradle.properties-at-GRADLE_USER_HOME > gradle.properties-at-project-root-dir
 	
+
+--console=verbose
+
 	
 	
 	
