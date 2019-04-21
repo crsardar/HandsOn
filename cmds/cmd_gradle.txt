@@ -19,6 +19,9 @@
 
 	gradle :tasks
 	gradle tasks // both are same
+
+// show all properties 
+	gradle properties
 	
 // run multiple tasks separating them by space (&b)
 // bellow will run clean & jacocoTestReport tasks 
