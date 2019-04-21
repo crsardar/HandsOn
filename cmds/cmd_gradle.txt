@@ -37,6 +37,24 @@
 // if build file is named other than "build.gradle", say "myBuild.gradle"
 	
 	gradle -b myBuild.gradle build 
+
+
+// change log level to INFO
+	gradle myTask -i
+
+// print complete StackTrace
+	gradle myTask -s
+
+// change log level to INFO & print StackTrace
+	gradle myTask -is
+	// or
+	gradle myTask -i -s
+
+//-P, --project-prop: Project properties are variables available in your build script.
+	gradle myTask -PmyProp=ChittaranjaSardar
+
+
+............................... Tasks ............................... 
 	
 // print something from inside build.gradle file 
 	task pringMessage(){
@@ -72,7 +90,13 @@ Precedence of properties  -
 
 --console=verbose
 
-	
+
+
+---------------------- Notes on Gradle ----------------------
+
+
+Tasks are always executed just once.
+No matter whether they’re specified on the command line or act as a dependency for another task.
 	
 	
 	
