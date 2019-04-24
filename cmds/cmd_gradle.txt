@@ -22,7 +22,16 @@
 
 // show all properties 
 	gradle properties
-	
+
+// start gradle daemon. Check using ps | grep gradle
+	gradle myTask --daemon
+
+// run without existing daemon
+	gradle myTask --no-daemon
+
+// stop daemon
+	gradle --stop
+
 // run multiple tasks separating them by space (&b)
 // bellow will run clean & jacocoTestReport tasks 
 
