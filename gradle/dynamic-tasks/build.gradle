@@ -1,0 +1,43 @@
+// ---> Example of a Groovy function
+def groovyFunction(){
+
+    println 'This is a Groovy Function!'
+}
+ 
+task myTaskOne{
+    
+    doLast{
+        groovyFunction()
+    }
+}
+// <<<
+
+// ---> Example of Dynamic Tasks
+task myStaticTask{
+    doLast{
+        println("Repeat after me ....")
+    }
+}
+
+3.times {
+
+    task "dynamicTask$it" {
+
+        doLast{
+            println "I am The Best!"
+        }
+    }
+}
+
+dynamicTask0.dependsOn myStaticTask
+dynamicTask2.dependsOn dynamicTask0, dynamicTask1
+
+task aggregatorTask(dependsOn: dynamicTask2)
+
+// <<<
+/*
+* Gradle execute a tasks only once in a single run, run bellow command and see -
+*
+*   gradle aggregatorTask myStaticTask
+*
+ */

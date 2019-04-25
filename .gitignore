@@ -1,6 +1,5 @@
 **/.idea
 **/.gradle
-**/gradle
 **/logs
 **/target
 **/generated
