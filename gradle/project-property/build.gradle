@@ -1,0 +1,16 @@
+task myTask{
+	doLast{
+		System.out.println("My name is " + myProp)
+	}
+}
+
+
+/* 
+run this as follow -
+
+	gradle myTask -PmyProp=ChittaranjanSardar
+
+or
+
+	gradle myTask -PmyProp="Chittaranjan Sardar"
+*/
