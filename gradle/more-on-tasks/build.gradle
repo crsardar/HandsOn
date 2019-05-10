@@ -1,0 +1,92 @@
+
+// -----> Adding multiple actions to a task
+version = '1.0.1-SNAPSHOT'
+
+task printVersion{
+	
+	doFirst{
+		println 'Current version = $version'
+	}
+	
+	doLast{
+		println 'doLast 1' 
+	}
+}
+
+printVersion.doFirst{
+	
+	println 'It shuld come first!'
+}
+
+printVersion.doLast{
+	
+	println 'It should be the least one!'
+}
+//<<<
+
+// -----> Different ways to make task dependencies 
+
+task firstTask{
+	
+	doFirst{
+	
+		println 'I am firstTask'
+	}
+}
+
+task secondTask{
+
+	doLast{
+		
+		println 'I am secondTask'
+	}
+}
+
+task thirdTask(dependsOn: [firstTask, secondTask]){
+
+	doFirst{
+		
+		println 'I am thirdTask'
+	}
+}
+
+
+task fourthTask {
+
+	doLast{
+		
+		logger.quiet 'I am fourthTask'
+	}
+}
+
+fourthTask.dependsOn(thirdTask)
+
+/*
+For 'dependsOn: [firstTask, secondTask, ......]' -  
+Gradle doesn’t guarantee the order in which the dependencies of a task are executed.
+The method call dependsOn only defines that the dependent tasks need to be executed beforehand.
+*/
+//<<<
+
+
+// -----> Finalizer Task
+task myFinalizerTask{
+
+	doFirst{
+		
+		println 'I am from myFinalizerTask'
+	}
+}
+
+task myDependantTask{
+
+	doFirst{
+	
+		logger.quiet 'I am from myDependantTask'
+	}
+}
+
+myDependantTask.finalizedBy myFinalizerTask
+
+// <<<
+

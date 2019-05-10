@@ -65,23 +65,6 @@
 //-P, --project-prop: Project properties are variables available in your build script.
 	gradle myTask -PmyProp=ChittaranjaSardar
 
-
-............................... Tasks ............................... 
-	
-// print something from inside build.gradle file 
-	task pringMessage(){
-	
-		println "Ohm Nama Shibai!"
-	}
-	
-// gradle customized task
-	task printVariantNames(){
-		doLast{
-			android.applicationVarians.all{ variant
-				println variant.name
-			}
-		}
-	}
 	
 // exclude a taskfrom execution, lint task excluded
 	gradle build -x lint 
