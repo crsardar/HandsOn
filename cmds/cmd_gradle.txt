@@ -86,6 +86,16 @@ Precedence of properties  -
 --console=verbose
 
 
+// Dependency Insight
+gradle -q dependencyInsight --[configuration i.e. compile/testCompile] [task name] --dependency
+// --refresh-dependencies
+
+// Task Graph
+
+
+
+
+
 
 ---------------------- Notes on Gradle ----------------------
 

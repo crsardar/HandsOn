@@ -1,0 +1,155 @@
+/**
+ * Gradle instantiates the 'class org.gradle.api.Project' based on configuration in build.gradle.
+ *
+ * Makes it implicitly available through the 'project' variable.
+ */
+
+// This set description for Parent project
+project.setDescription("This is a cumullated Gradle project, where I am experimenting all of Gradle's fundas!")
+
+task testProjectObject {
+
+    doFirst {
+
+    }
+
+    doLast {
+
+        println "Description of Parent project : " + project.description
+        println "Description of Parent project : " + project.getDescription()
+
+
+        setDescription("Gradle is a multi project, this is description for current child project")
+
+        println "Project description = " + getDescription()
+
+    }
+}
+
+// Declaring & accessing Properties
+project.ext.myProp = 'myValue'
+
+ext {
+
+    someOtherProp = 123
+}
+
+assert myProp == 'myValue'
+println project.someOtherProp
+ext.someOtherProp = 567
+
+task testProperties {
+
+    doLast {
+
+        println "My myProp = " + myProp
+        println "My someOtherProp = " + someOtherProp
+    }
+}
+
+
+// Task Dependencies
+task taskDep1 {
+
+    doLast {
+
+        println "Task Dep1"
+    }
+}
+
+task taskDep2 {
+
+    doLast {
+
+        println "Task Dep2"
+    }
+}
+
+task testDependency(dependsOn: [taskDep2, taskDep1]) { // Gradle does not gurantees which one will be executed first
+
+    doLast {
+
+        println 'Task testDependency'
+    }
+
+}
+
+task taskDep3 {
+
+    doLast {
+
+        println "Task Dep3"
+    }
+}
+
+taskDep3.dependsOn(testDependency)
+
+
+// Finalizer tasks
+task testFinalizer {
+
+    doLast {
+
+        //println 'Task testFinalizer - ' + (12/0) // this should fail, but 'finalizerTask' should be executed ??? - NO
+        println 'Task testFinalizer'
+    }
+}
+
+task finalizerTask {
+
+    doLast {
+
+        println "Task finalizerTask"
+    }
+}
+
+testFinalizer.finalizedBy(finalizerTask)
+
+
+/**
+ * task configuration - task which is executed during configuration of build scrip, before execution of any task.
+ *
+ * Any configuration code is executed with every build of your project, even if we just execute gradle tasks.
+ */
+task taskConfiguration {
+
+    println "This is Gradle's 'task configuration', it does not has any action block"
+}
+
+
+// Gradle file API
+task testFile {
+
+    doLast {
+
+        def buildFile = file('build.gradle')
+
+        println("File : " + buildFile.getAbsolutePath() + " : exists = " + buildFile.exists())
+    }
+}
+
+ext.name = 'Chittaranjan'
+ext.title = 'Sardar'
+ext {
+    address = "West Bengal"
+    village = "Kolkata"
+}
+task testAttributes {
+
+    doLast {
+        println ""
+        println "$name $title"
+        println "$address $village"
+    }
+}
+
+
+
+configurations.cargo.resolutionStrategy {
+    cacheDynamicVersionsFor 0, 'seconds'
+}
+
+
+configurations.compile.resolutionStrategy {
+    cacheChangingModulesFor 0, 'seconds'
+}
