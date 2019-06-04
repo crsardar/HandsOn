@@ -16,6 +16,29 @@ print("My double = \(double)")
 
 var name = "Chittaranjan"
 print("My name is \(name)")
-name = 113
-pr
+
+// --->
+let range = 11
+switch range {
+case 11, 12, 13, 14, 15, 16, 20:
+    print("Greater than 10")
+//    break
+case 1...10:
+    print("Less than 11")
+    break
+case 50:
+    print("50 is here")
+default:
+    print("In default")
+}
+
+// --->
+let myName  = "Chittaranjan"
+if name == "Sardar" {
+    print("Hi Sardar")
+}else if name == "chittaranjan"{
+    print("You should not be here")
+}else if name == "Chittaranjan"{
+    print("Hi Chittaranjan")
+}
 
