@@ -92,6 +92,8 @@ gradle -q dependencyInsight --[configuration i.e. compile/testCompile] [task nam
 
 // Task Graph
 
+/////////////////// Dependency ---------------->>>
+gradle app:dependencies
 
 
 
